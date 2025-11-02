@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Our Portfolio - MSI Interiors | Interior Design Projects in Delhi NCR</title>
+    <meta name="description" content="Explore MSI Interiors portfolio of stunning interior design projects in Delhi NCR. View our completed residential, commercial, and office interior projects.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
+        /* Reset & variables */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{
+            --primary-gold: #d4a574;
+            --dark-navy: #1a1f2e;
+            --light-bg: #f8f6f3;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        html{scroll-behavior:smooth;}
+        body{font-family:'Poppins',sans-serif;color:var(--text-dark);line-height:1.7;overflow-x:hidden;}
+        /* Animations */
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+        @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+        @keyframes zoomIn{from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
+        .animate-on-scroll{opacity:0;transform:translateY(30px);transition:all 0.8s ease;}
+        .animate-on-scroll.visible{opacity:1;transform:translateY(0);}
+
+        /* Header */
+        header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);box-shadow:var(--shadow-sm);z-index:1000;padding:18px 0;}
+        nav{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 28px;}
+        .logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--dark-navy);text-decoration:none;}
+        .logo-subtitle{display:block;font-size:10px;color:var(--primary-gold);font-weight:400;margin-top:2px;}
+
+        .nav-links{display:flex;gap:30px;list-style:none;}
+        .nav-links a{text-decoration:none;color:var(--text-dark);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:1px;transition:color .25s;}
+        .nav-links a:hover,.nav-links a.active{color:var(--primary-gold);}
+
+        /* Hero */
+        .portfolio-hero{margin-top:80px;height:62vh;background:linear-gradient(rgba(26,31,46,.7),rgba(26,31,46,.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23d4a574" width="1920" height="1080"/><text x="50%" y="50%" font-size="60" fill="%23fff" text-anchor="middle" opacity="0.3">Our Portfolio</text></svg>');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);position:relative;}
+        .portfolio-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:linear-gradient(to top,var(--white),transparent);}
+        .hero-content{z-index:2;max-width:900px;padding:0 20px;}
+        .hero-content h1{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;margin-bottom:14px;letter-spacing:3px;animation:fadeInUp 1s ease;}
+        .hero-content p{font-size:18px;font-weight:300;letter-spacing:1px;animation:fadeInUp 1s ease .3s both;}
+
+        /* Stats */
+        .portfolio-stats{padding:60px 50px;background:var(--light-bg);}
+        .stats-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+        .stat-box{text-align:center;padding:28px 18px;background:var(--white);border-radius:12px;box-shadow:var(--shadow-sm);transition:all .4s;}
+        .stat-box:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+        .stat-icon{font-size:36px;color:var(--primary-gold);margin-bottom:12px;}
+        .stat-number{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--dark-navy);margin-bottom:8px;}
+        .stat-label{font-size:12px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;}
+
+        /* Filter */
+        .filter-section{padding:40px 20px;background:var(--white);text-align:center;}
+        .filter-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;max-width:1000px;margin:0 auto;}
+        .filter-btn{padding:10px 20px;background:var(--light-bg);border:2px solid transparent;border-radius:30px;color:var(--text-dark);font-size:13px;font-weight:500;text-transform:uppercase;cursor:pointer;transition:all .25s;}
+        .filter-btn:hover,.filter-btn.active{background:var(--primary-gold);color:var(--white);border-color:var(--primary-gold);transform:translateY(-2px);}
+
+        /* Portfolio grid */
+        .portfolio-section{padding:60px 20px 120px;background:var(--white);}
+        .portfolio-container{max-width:1400px;margin:0 auto;}
+        .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+        .portfolio-item{position:relative;height:360px;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm);transition:all .45s;}
+        .portfolio-item:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+        .portfolio-image{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .5s;}
+        .portfolio-item:hover .portfolio-image{transform:scale(1.08);}
+
+        .portfolio-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top, rgba(26,31,46,0.95), transparent);padding:26px 18px 20px;transition:all .45s;}
+        .portfolio-category{display:inline-block;padding:6px 14px;background:var(--primary-gold);color:var(--white);border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+        .portfolio-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--white);margin-bottom:8px;}
+        .portfolio-location{font-size:13px;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:8px;}
+        .portfolio-info{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.12);opacity:0;transform:translateY(10px);transition:all .4s;}
+        .portfolio-item:hover .portfolio-info{opacity:1;transform:translateY(0);}
+
+        .info-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.95);}
+        .info-item i{color:var(--primary-gold);}
+
+        .view-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);background:var(--white);color:var(--dark-navy);padding:12px 26px;border-radius:30px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;font-size:12px;opacity:0;transition:all .35s;z-index:10;}
+        .portfolio-item:hover .view-btn{opacity:1;transform:translate(-50%,-50%) scale(1);}
+
+        /* Modal (overlay) */
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:2000;padding:28px;align-items:center;justify-content:center;overflow:auto;}
+        .modal.active{display:flex;}
+        .modal-content{background:var(--white);max-width:1100px;width:100%;border-radius:16px;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 420px;box-shadow:var(--shadow-lg);animation:zoomIn .4s ease;}
+        /* make modal-content responsive */
+        @media (max-width:968px){ .modal-content{grid-template-columns:1fr;} }
+
+        .modal-close{position:absolute;top:14px;right:14px;width:46px;height:46px;background:var(--dark-navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;z-index:10;box-shadow:var(--shadow-md);transition:transform .25s;}
+        .modal-close:hover{transform:rotate(90deg);}
+
+        .modal-image{background-size:cover;background-position:center;width:100%;min-height:460px;display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--white);}
+        .modal-details{padding:28px 30px;}
+        .modal-category{display:inline-block;padding:8px 20px;background:var(--light-bg);color:var(--primary-gold);border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:18px;}
+        .modal-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--dark-navy);margin-bottom:10px;}
+        .modal-location{font-size:14px;color:var(--text-light);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+        .modal-description{font-size:15px;color:var(--text-light);line-height:1.9;margin-bottom:18px;}
+        .modal-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+        .spec-item{padding:16px;background:var(--light-bg);border-radius:10px;text-align:center;}
+        .spec-item i{font-size:20px;color:var(--primary-gold);margin-bottom:8px;}
+        .spec-item h4{font-size:12px;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+        .spec-item p{font-size:15px;color:var(--dark-navy);font-weight:600;}
+        .modal-features h3{font-size:18px;color:var(--dark-navy);margin-bottom:12px;font-weight:600;}
+        .features-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:6px;}
+        .feature-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);}
+        .feature-item i{color:var(--primary-gold);font-size:16px;}
+
+        /* small gallery row in modal */
+        .modal-thumbs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
+        .thumb{width:72px;height:56px;border-radius:8px;background-size:cover;background-position:center;cursor:pointer;border:2px solid transparent;transition:all .18s;}
+        .thumb:focus,.thumb.active-thumb{outline:none;border-color:var(--primary-gold);transform:scale(1.03);}
+
+        /* CTA & footer & whatsapp */
+        .cta-section{background:linear-gradient(135deg,var(--dark-navy) 0%, #2d3748 100%);padding:80px 20px;text-align:center;color:var(--white);}
+        .cta-section h2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;margin-bottom:12px;}
+        .cta-button{display:inline-block;padding:14px 40px;background:var(--primary-gold);color:var(--white);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:600;border-radius:40px;transition:all .3s;}
+        .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,165,116,.35);}
+
+        footer{padding:28px 20px;background:#0f1419;color:#94a3b8;text-align:center;font-size:13px;}
+
+        .whatsapp-float{position:fixed;bottom:26px;right:26px;width:64px;height:64px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--white);box-shadow:0 6px 26px rgba(37,211,102,.48);cursor:pointer;z-index:999;text-decoration:none;}
+        .whatsapp-float:hover{transform:scale(1.08);}
+
+        /* responsive adjustments */
+        @media (max-width:1200px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);} .stats-container{grid-template-columns:repeat(2,1fr);} }
+        @media (max-width:968px){ .nav-links{display:none;} .portfolio-grid{grid-template-columns:1fr;} .modal-image{min-height:300px;} .modal-specs,.features-list{grid-template-columns:1fr;} .modal-content{grid-template-columns:1fr;} }
+        @media (max-width:640px){ nav{padding:0 16px;} .portfolio-hero{height:50vh;} .hero-content h1{font-size:36px;} .whatsapp-float{width:54px;height:54px;font-size:24px;bottom:16px;right:16px;} }
+        /* when modal open prevent background scroll */
+        body.modal-open{overflow:hidden;}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                MSI INTERIORS
+                <span class="logo-subtitle">Best Interior Designers Since 2018</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="portfolio-hero">
+        <div class="hero-content">
+            <h1>Our Portfolio</h1>
+            <p>Transforming Spaces, Creating Masterpieces</p>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="portfolio-stats">
+        <div class="stats-container">
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-icon"><i class="fas fa-home"></i></div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number">450+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-icon"><i class="fas fa-city"></i></div>
+                <div class="stat-number">25+</div>
+                <div class="stat-label">Cities Covered</div>
+            </div>
+            <div class="stat-box animate-on-scroll">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="filter-section">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="office">Office</button>
+            <button class="filter-btn" data-filter="kitchen">Modular Kitchen</button>
+            <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+            <button class="filter-btn" data-filter="living">Living Room</button>
+        </div>
+    </section>
+
+    <!-- Portfolio grid -->
+    <section class="portfolio-section">
+        <div class="portfolio-container">
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- JS will populate items from projects array -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Let’s design your dream home or workspace with elegance, detail, and precision.</p>
+        <a href="consultform.html" class="cta-button">Book a Free Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MSI Interiors. All Rights Reserved. | Designed with ❤ by Abhishek Singh</p>
+    </footer>
+
+    <!-- WhatsApp Floating (placeholder number: replace 'xxxxxxxxxxx') -->
+    <a href="https://wa.me/919718530108" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal template -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Close project details"><i class="fas fa-times"></i></button>
+
+            <div id="modalImage" class="modal-image" style="background-image: url('');" aria-hidden="true">MSI</div>
+
+            <div class="modal-details" id="modalDetails">
+                <span class="modal-category" id="modalCategory">Residential</span>
+                <h2 class="modal-title" id="modalTitle">Sample Project</h2>
+                <p class="modal-location" id="modalLocation"><i class="fas fa-map-marker-alt"></i> Gurgaon, India</p>
+                <p class="modal-description" id="modalDescription">
+                    This is a sample description of our interior project — combining luxury, modern aesthetics, and functionality to create an exquisite experience.
+                </p>
+
+                <div class="modal-specs" id="modalSpecs">
+                    <!-- 3 spec items inserted here -->
+                </div>
+
+                <div class="modal-features">
+                    <h3>Key Features</h3>
+                    <div class="features-list" id="modalFeatures">
+                        <!-- features here -->
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal-thumbs" id="modalThumbs" aria-label="Project image thumbnails">
+                        <!-- thumbs injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /***********************
+         * Project data array
+         * each project has:
+         *  - title, category, location, area, year, type, description, features[], images[]
+         *  You can add more projects to this array — the grid and modal populate automatically.
+         ***********************/
+        const projects = [
+            {
+                id: 0,
+                title: 'Modern Living Room',
+                category: 'Residential',
+                categories: ['residential','living'],
+                location: 'DLF Phase 3, Gurgaon',
+                area: '2000 sq ft',
+                year: 2024,
+                type: 'Living Room',
+                description: 'A contemporary living room combining neutral tones, layered lighting and custom cabinetry for a warm, inviting atmosphere.',
+                features: ['Custom furniture design','Smart lighting integration','Premium material selection','Space optimization'],
+                images: [
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db',
+                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f89a4a5b0b1d46e3d0d9f536b5a3b54',
+                    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f5c8d4c8f309e8e5676f4ea9b9b2f67'
+                ]
+            },
+            {
+                id: 1,
+                title: 'Corporate Office',
+                category: 'Office',
+                categories: ['office','commercial'],
+                location: 'Cyber City, Gurgaon',
+                area: '5000 sq ft',
+                year: 2024,
+                type: 'Office',
+                description: 'A modern corporate office with open-plan layouts, acoustic solutions, and collaborative breakout areas.',
+                features: ['Ergonomic workstations','Acoustic panels','Integrated AV','Sustainable materials'],
+                images: [
+                    'https://images.unsplash.com/photo-1556761175-129418cb2dfe?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=bb99a2f7b8f6c7c8f7b9b6b3f6e2a1c1',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db',
+                    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=37f9ef0b5d2b6a3c4c69d3a0e2833f56'
+                ]
+            },
+            {
+                id: 2,
+                title: 'Contemporary Kitchen',
+                category: 'Modular Kitchen',
+                categories: ['residential','kitchen'],
+                location: 'Vasant Kunj, Delhi',
+                area: '300 sq ft',
+                year: 2024,
+                type: 'Kitchen',
+                description: 'A sleek modular kitchen combining warm wood tones with matte surfaces and smart storage to maximize flow.',
+                features: ['Soft-close cabinets','Integrated appliances','Quartz countertops','Pull-out storage'],
+                images: [
+                    'https://images.unsplash.com/photo-1556911220-e15b29be8c0d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=f3d5b2b43d8a9f5a8a1f8c8b4d7f3e2a',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db',
+                    'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=aa1f1df1d2b3c4a5d6f7b8c9a0b1c2d3'
+                ]
+            },
+            {
+                id: 3,
+                title: 'Luxury Master Bedroom',
+                category: 'Bedroom',
+                categories: ['residential','bedroom'],
+                location: 'Sohna Road, Gurgaon',
+                area: '400 sq ft',
+                year: 2023,
+                type: 'Bedroom',
+                description: 'A luxurious master bedroom with layered textures, accent lighting and bespoke closet solutions.',
+                features: ['Walk-in closet','Accent lighting','Soundproofing','Luxury finishes'],
+                images: [
+                    'https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=ad8f0e65c4f2a3b6d5a3f7f1a7b9c8d0',
+                    'https://images.unsplash.com/photo-1549187774-b4d1a6a5e9a1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=e9f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8',
+                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f89a4a5b0b1d46e3d0d9f536b5a3b54'
+                ]
+            },
+            {
+                id: 4,
+                title: 'Luxury Showroom Design',
+                category: 'Commercial',
+                categories: ['commercial','office'],
+                location: 'MG Road, Delhi',
+                area: '2500 sq ft',
+                year: 2023,
+                type: 'Showroom',
+                description: 'A premium showroom layout optimized for product display, customer flow and brand storytelling.',
+                features: ['Feature lighting','Flexible display modules','Customer circulation plan','Premium finishes'],
+                images: [
+                    'https://images.unsplash.com/photo-1543076447-215ad9ba6926?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a8b9c7d6e5f4a3b2c1d0e9f8a7b6c5d',
+                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f6e7d8c9b0a1d2c3e4f56789abcd012',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db'
+                ]
+            },
+            {
+                id: 5,
+                title: 'Elegant Drawing Room',
+                category: 'Residential',
+                categories: ['residential','living'],
+                location: 'Greater Kailash, Delhi',
+                area: '1800 sq ft',
+                year: 2024,
+                type: 'Drawing Room',
+                description: 'An elegant drawing room focusing on symmetry, refined upholstery and classical details updated for today.',
+                features: ['Custom upholstery','Heritage detailing','Ambient lighting','Climate control'],
+                images: [
+                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f89a4a5b0b1d46e3d0d9f536b5a3b54',
+                    'https://images.unsplash.com/photo-1618221197229-4b2f3a2320d6?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db'
+                ]
+            }
+        ];
+
+        /* Utility: build the portfolio grid from the projects[] array */
+        const portfolioGrid = document.getElementById('portfolioGrid');
+
+        function createProjectCard(project){
+            const div = document.createElement('div');
+            div.className = 'portfolio-item animate-on-scroll';
+            div.setAttribute('data-category', project.categories.join(' '));
+            div.innerHTML = `
+                <div class="portfolio-image" style="background-image:url('${project.images[0]}');"></div>
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">${project.category}</span>
+                    <h3 class="portfolio-title">${project.title}</h3>
+                    <p class="portfolio-location"><i class="fas fa-map-marker-alt"></i> ${project.location}</p>
+                    <div class="portfolio-info">
+                        <span class="info-item"><i class="fas fa-ruler-combined"></i> ${project.area}</span>
+                        <span class="info-item"><i class="fas fa-calendar"></i> ${project.year}</span>
+                    </div>
+                </div>
+                <button class="view-btn" aria-label="View project ${project.title}">View Project</button>
+            `;
+            // open modal on click
+            div.querySelector('.view-btn').addEventListener('click', () => openModal(project.id));
+            // Also allow clicking the card to open
+            div.addEventListener('click', (e) => {
+                // avoid opening when clicking links/buttons inside overlay (none for now) 
+                if (!e.target.closest('.view-btn')) openModal(project.id);
+            });
+            return div;
+        }
+
+        // populate grid
+        projects.forEach(p => portfolioGrid.appendChild(createProjectCard(p)));
+
+        /* Filter functionality (works with dynamically added items) */
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const active = document.querySelector('.filter-btn.active');
+                if (active) active.classList.remove('active');
+                button.classList.add('active');
+                const filter = button.dataset.filter;
+                const items = document.querySelectorAll('.portfolio-item');
+                items.forEach(item => {
+                    const cats = item.getAttribute('data-category') || '';
+                    if (filter === 'all' || cats.includes(filter)) item.style.display = '';
+                    else item.style.display = 'none';
+                });
+            });
+        });
+
+        /* Scroll animation for elements with animate-on-scroll */
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        function handleScrollAnimation(){
+            const triggerBottom = window.innerHeight * 0.85;
+            animatedElements.forEach(el => {
+                const boxTop = el.getBoundingClientRect().top;
+                if (boxTop < triggerBottom) el.classList.add('visible');
+                else el.classList.remove('visible');
+            });
+        }
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+
+        /**********************
+         * Modal behaviour & population
+         **********************/
+        const modal = document.getElementById('projectModal');
+        const modalContent = modal.querySelector('.modal-content');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalLocation = document.getElementById('modalLocation');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalSpecs = document.getElementById('modalSpecs');
+        const modalFeatures = document.getElementById('modalFeatures');
+        const modalThumbs = document.getElementById('modalThumbs');
+        const modalCloseBtn = modal.querySelector('.modal-close');
+
+        let currentProjectIndex = null;
+
+        function openModal(index){
+            const project = projects.find(p => p.id === index);
+            if(!project) return;
+            currentProjectIndex = index;
+
+            // populate main image
+            modalImage.style.backgroundImage = `url('${project.images[0]}')`;
+            modalImage.textContent = ''; // remove MSI placeholder text
+
+            // set text fields
+            modalTitle.textContent = project.title;
+            modalCategory.textContent = project.category;
+            modalLocation.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${project.location}`;
+            modalDescription.textContent = project.description;
+
+            // specs
+            modalSpecs.innerHTML = '';
+            const specItems = [
+                {icon: 'fa-ruler-combined', label: 'Area', value: project.area},
+                {icon: 'fa-calendar-alt', label: 'Year', value: project.year},
+                {icon: 'fa-home', label: 'Category', value: project.category}
+            ];
+            specItems.forEach(s => {
+                const d = document.createElement('div');
+                d.className = 'spec-item';
+                d.innerHTML = `<i class="fas ${s.icon}"></i><h4>${s.label}</h4><p>${s.value}</p>`;
+                modalSpecs.appendChild(d);
+            });
+
+            // features
+            modalFeatures.innerHTML = '';
+            project.features.forEach(f => {
+                const fi = document.createElement('div');
+                fi.className = 'feature-item';
+                fi.innerHTML = `<i class="fas fa-check"></i>${f}`;
+                modalFeatures.appendChild(fi);
+            });
+
+            // thumbnails (and click to change main image)
+            modalThumbs.innerHTML = '';
+            project.images.forEach((img, idx) => {
+                const t = document.createElement('button');
+                t.className = 'thumb';
+                t.style.backgroundImage = `url('${img}')`;
+                t.setAttribute('aria-label', `View image ${idx+1} for ${project.title}`);
+                t.addEventListener('click', () => {
+                    document.querySelectorAll('.thumb').forEach(x => x.classList.remove('active-thumb'));
+                    t.classList.add('active-thumb');
+                    modalImage.style.backgroundImage = `url('${img}')`;
+                });
+                if (idx === 0) t.classList.add('active-thumb');
+                modalThumbs.appendChild(t);
+            });
+
+            // show modal
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+
+            // trap focus to modal (basic)
+            modalContent.querySelector('.modal-close').focus();
+        }
+
+        function closeModal(){
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+            currentProjectIndex = null;
+            // return focus to the first visible portfolio item
+            const visibleCard = document.querySelector('.portfolio-item');
+            if (visibleCard) visibleCard.focus?.();
+        }
+
+        // close via close button
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        // close on overlay click (click outside modal-content)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // close on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        /* Accessibility: prevent click on modal-content from closing via propagation */
+        modalContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        /* Optional: close modal on window resize to avoid layout issues on small devices */
+        window.addEventListener('resize', () => {
+            if (modal.classList.contains('active') && window.innerWidth < 400) {
+                // keep it open normally — we do nothing. (This handler is present if you want custom behavior.)
+            }
+        });
+
+        /* Small enhancement: clicking keyboard Enter on .view-btn will trigger open (button element already does) */
+
+        /***********************
+         * Notes:
+         * - To add more projects: add an object to the projects[] array above.
+         * - To change WhatsApp number: change the href on the .whatsapp-float anchor.
+         * - All images used are Unsplash images (publicly shareable for non-deceptive uses).
+         ***********************/
+    </script>
+</body>
+</html>

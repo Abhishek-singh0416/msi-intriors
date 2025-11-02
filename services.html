@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - MSI Interiors | Complete Interior Solutions in Delhi NCR</title>
+    <meta name="description" content="MSI Interiors offers complete interior design services including office interiors, home design, renovation, repairs, modular kitchens, furniture, and material supply in Delhi NCR.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #d4a574;
+            --dark-navy: #1a1f2e;
+            --light-bg: #f8f6f3;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            color: var(--primary-gold);
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-gold);
+        }
+
+        /* Hero Section */
+        .services-hero {
+            margin-top: 80px;
+            height: 70vh;
+            background: linear-gradient(rgba(26, 31, 46, 0.75), rgba(26, 31, 46, 0.75)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23d4a574" width="1920" height="1080"/><text x="50%" y="50%" font-size="60" fill="%23fff" text-anchor="middle" opacity="0.3">Our Services</text></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .services-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        /* Services Overview */
+        .services-overview {
+            padding: 100px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 18px;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Main Services Grid */
+        .main-services {
+            padding: 80px 50px;
+            background: var(--light-bg);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, #c99654 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image i {
+            font-size: 80px;
+            color: var(--white);
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-image i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .service-image::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .service-content {
+            padding: 35px 30px;
+        }
+
+        .service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--dark-navy);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-content p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            font-size: 14px;
+            color: var(--text-light);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .service-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 50px;
+            background: var(--white);
+        }
+
+        .process-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--light-bg);
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-step:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+
+        .process-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-gold), #c99654);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            color: var(--dark-navy);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Additional Services */
+        .additional-services {
+            padding: 100px 50px;
+            background: var(--light-bg);
+        }
+
+        .additional-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .additional-card {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .additional-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .additional-card i {
+            font-size: 42px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+        }
+
+        .additional-card h4 {
+            font-size: 18px;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .additional-card p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 100px 50px;
+            background: var(--white);
+        }
+
+        .why-choose-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .why-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary-gold), #c99654);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 40px;
+            color: var(--white);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .why-item h3 {
+            font-size: 22px;
+            color: var(--dark-navy);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .why-item p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #2d3748 100%);
+            padding: 100px 50px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #e2e8f0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--primary-gold);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+            background: #c99654;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--primary-gold);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 50px;
+            background: #0f1419;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-step::after {
+                display: none;
+            }
+
+            .additional-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .services-hero h1 {
+                font-size: 48px;
+            }
+
+            .services-hero p {
+                font-size: 18px;
+            }
+
+            .services-grid,
+            .process-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .additional-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .services-hero {
+                height: 60vh;
+            }
+
+            .services-hero h1 {
+                font-size: 36px;
+            }
+
+            .services-overview,
+            .main-services,
+            .process-section,
+            .additional-services,
+            .why-choose,
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .additional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 36px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                MSI INTERIORS
+                <span class="logo-subtitle">Best Interior Designers Since 2018</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="hero-content">
+            <h1>Our Services</h1>
+            <p>Complete Interior Design Solutions from Concept to Completion</p>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview">
+        <h2 class="section-title animate-on-scroll">Comprehensive Interior Solutions</h2>
+        <p class="section-subtitle animate-on-scroll">From residential apartments to commercial offices, renovations to repairs, material supply to complete turnkey projects - we handle everything under one roof</p>
+    </section>
+
+    <!-- Main Services -->
+    <section class="main-services">
+        <div class="services-container">
+            <div class="services-grid">
+                <!-- Residential Interior -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-home"></i>
+                        <span class="service-tag">Popular</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Residential Interiors</h3>
+                        <p>Transform your home into a beautiful sanctuary with our complete residential interior design services.</p>
+                        <ul class="service-features">
+                            <li>Apartment Interior Design</li>
+                            <li>Villa & Bungalow Interiors</li>
+                            <li>Bedroom Design</li>
+                            <li>Living Room Design</li>
+                            <li>Dining Area Design</li>
+                            <li>Balcony & Terrace Design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Office Interior -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-building"></i>
+                        <span class="service-tag">Commercial</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Office Interiors</h3>
+                        <p>Create productive and inspiring workspaces with our professional office interior design solutions.</p>
+                        <ul class="service-features">
+                            <li>Corporate Office Design</li>
+                            <li>Workspace Planning</li>
+                            <li>Conference Room Design</li>
+                            <li>Reception Area Design</li>
+                            <li>Cabin & Cubicle Design</li>
+                            <li>Break Room Design</li>
+                        </ul>
+                    </div>
+                <!-- </div>
+
+                Modular Kitchen
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-utensils"></i>
+                        <span class="service-tag">Trending</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Modular Kitchen</h3>
+                        <p>Modern, functional and beautiful modular kitchen designs with smart storage solutions.</p>
+                        <ul class="service-features">
+                            <li>L-Shape Kitchen</li>
+                            <li>U-Shape Kitchen</li>
+                            <li>Parallel Kitchen</li>
+                            <li>Island Kitchen</li>
+                            <li>Straight Kitchen</li>
+                            <li>Custom Storage Solutions</li>
+                        </ul>
+                    </div>
+                </div> -->
+
+                <!-- Renovation & Remodeling -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-hammer"></i>
+                        <span class="service-tag">Expert</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Renovation & Remodeling</h3>
+                        <p>Complete renovation and remodeling services to give your space a fresh new look.</p>
+                        <ul class="service-features">
+                            <li>Complete Home Renovation</li>
+                            <li>Office Remodeling</li>
+                            <li>Kitchen Renovation</li>
+                            <li>Bathroom Renovation</li>
+                            <li>Space Optimization</li>
+                            <li>Modern Upgrades</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Custom Furniture -->
+                <!-- <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-couch"></i>
+                        <span class="service-tag">Bespoke</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Furniture</h3>
+                        <p>Bespoke furniture designed and manufactured to perfectly fit your space and style.</p>
+                        <ul class="service-features">
+                            <li>Custom Wardrobes</li>
+                            <li>TV Units & Cabinets</li>
+                            <li>Study Tables & Storage</li>
+                            <li>Bed Frames & Headboards</li>
+                            <li>Shoe Racks & Storage</li>
+                            <li>Crockery Units</li>
+                        </ul>
+                    </div>
+                </div> -->
+
+                <!-- Repairs & Maintenance -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-tools"></i>
+                        <span class="service-tag">24/7</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Repairs & Maintenance</h3>
+                        <p>Professional repair and maintenance services to keep your interiors in perfect condition.</p>
+                        <ul class="service-features">
+                            <li>Furniture Repair</li>
+                            <li>Paint Touch-ups</li>
+                            <li>Plumbing Fixes</li>
+                            <li>Electrical Repairs</li>
+                            <li>Carpentry Work</li>
+                            <li>Regular Maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- False Ceiling -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>False Ceiling & Partitions</h3>
+                        <p>Stylish false ceiling designs and partition solutions for modern spaces.</p>
+                        <ul class="service-features">
+                            <li>POP False Ceiling</li>
+                            <li>Gypsum Ceiling</li>
+                            <li>Grid Ceiling</li>
+                            <li>Glass Partitions</li>
+                            <li>Gypsum Partitions</li>
+                            <li>Wooden Partitions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Painting & Wallpaper -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Painting & Wallpaper</h3>
+                        <p>Professional painting services and premium wallpaper installation for stunning walls.</p>
+                        <ul class="service-features">
+                            <li>Interior Painting</li>
+                            <li>Exterior Painting</li>
+                            <li>Texture Painting</li>
+                            <li>Wallpaper Installation</li>
+                            <li>Designer Wall Finishes</li>
+                            <li>Color Consultation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Material Supply -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-image">
+                        <i class="fas fa-boxes"></i>
+                        <span class="service-tag">Quality</span>
+                    </div>
+                    <div class="service-content">
+                        <h3>Material Supply</h3>
+                        <p>Premium quality materials from trusted brands at competitive prices.</p>
+                        <ul class="service-features">
+                            <li>Tiles & Flooring</li>
+                            <li>Sanitaryware</li>
+                            <li>Hardware & Fittings</li>
+                            <li>Electrical Items</li>
+                            <li>Plywood & Boards</li>
+                            <li>Paints & Chemicals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="process-section">
+        <div class="process-container">
+            <h2 class="section-title animate-on-scroll">Our Work Process</h2>
+            <p class="section-subtitle animate-on-scroll">Simple, transparent, and efficient process from start to finish</p>
+            
+            <div class="process-grid">
+                <div class="process-step animate-on-scroll">
+                    <div class="process-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Free initial consultation to understand your requirements, budget, and vision for the space.</p>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="process-number">2</div>
+                    <h3>Design & Planning</h3>
+                    <p>Create detailed 2D/3D designs, layouts, and material selection based on your preferences.</p>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="process-number">3</div>
+                    <h3>Execution</h3>
+                    <p>Professional execution with quality materials, skilled craftsmen, and regular progress updates.</p>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="process-number">4</div>
+                    <h3>Handover</h3>
+                    <p>Final inspection, quality check, and complete handover with maintenance guidelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <div class="services-container">
+            <h2 class="section-title animate-on-scroll">Additional Services</h2>
+            <p class="section-subtitle animate-on-scroll">Complete range of services for all your interior needs</p>
+            
+            <div class="additional-grid">
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-door-open"></i>
+                    <h4>Door & Window</h4>
+                    <p>Installation and repair of doors, windows, and frames</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Lighting Design</h4>
+                    <p>Ambient, task, and accent lighting solutions</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-water"></i>
+                    <h4>Plumbing Work</h4>
+                    <p>Complete plumbing installation and repairs</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-plug"></i>
+                    <h4>Electrical Work</h4>
+                    <p>Wiring, switches, and electrical fittings</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-bath"></i>
+                    <h4>Bathroom Design</h4>
+                    <p>Modern bathroom interiors with fixtures</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-table"></i>
+                    <h4>Flooring Services</h4>
+                    <p>Tiles, wooden, marble, and vinyl flooring</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-wind"></i>
+                    <h4>HVAC Installation</h4>
+                    <p>Air conditioning and ventilation systems</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Waterproofing</h4>
+                    <p>Terrace, bathroom, and wall waterproofing</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-cube"></i>
+                    <h4>Storage Solutions</h4>
+                    <p>Customized storage and organization systems</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-palette"></i>
+                    <h4>Color Consultation</h4>
+                    <p>Expert color scheme and palette selection</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Landscaping</h4>
+                    <p>Indoor plants and garden design services</p>
+                </div>
+
+                <div class="additional-card animate-on-scroll">
+                    <i class="fas fa-box-open"></i>
+                    <h4>Unpacking Services</h4>
+                    <p>Post-move interior setup and organization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="why-choose-container">
+            <h2 class="section-title animate-on-scroll">Why Choose MSI Interiors</h2>
+            <p class="section-subtitle animate-on-scroll">Your trusted partner for complete interior solutions</p>
+            
+            <div class="why-grid">
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Budget-Friendly</h3>
+                    <p>Transparent pricing with no hidden costs. Get premium quality interiors at affordable prices that fit your budget perfectly.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>On-Time Delivery</h3>
+                    <p>We value your time. All projects are completed within the agreed timeline with strict adherence to deadlines.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Premium quality materials from trusted brands. Every project undergoes rigorous quality checks before handover.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Experienced designers, skilled craftsmen, and dedicated project managers working together for your dream space.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for queries, updates, and post-completion maintenance assistance.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Turnkey Solutions</h3>
+                    <p>Complete end-to-end solutions from design to execution. One point contact for all your interior needs.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Warranty Coverage</h3>
+                    <p>Comprehensive warranty on all work and materials. Peace of mind with guaranteed service quality.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>500+ happy clients across Delhi NCR. Our commitment to excellence ensures 100% satisfaction.</p>
+                </div>
+
+                <div class="why-item animate-on-scroll">
+                    <div class="why-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Custom Designs</h3>
+                    <p>Personalized designs tailored to your unique taste, lifestyle, and space requirements. No two projects are the same.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="animate-on-scroll">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Get a free consultation and quote for your interior design project today!</p>
+            <div class="cta-buttons">
+                <a href="consultform.html" class="cta-button">Get Free consultation</a>
+                <a href="tel:+919718530108" class="cta-button secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>MSI Interiors</strong> - Complete Interior Design Solutions in Delhi NCR | Founded by Raja Babu in 2018</p>
+        <p>&copy; 2025 MSI Interiors. All Rights Reserved. | Designed with ❤ by Abhishek Singh</p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919718530108?text=Hello%20MSI%20Interiors,%20I%20need%20interior%20design%20services" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 50);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.services-hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+
+        // Service card click animation
+        document.querySelectorAll('.service-card, .additional-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Number animation for process steps
+        const animateNumbers = () => {
+            const numbers = document.querySelectorAll('.process-number');
+            numbers.forEach((num, index) => {
+                setTimeout(() => {
+                    num.style.animation = 'pulse 0.6s ease';
+                }, index * 200);
+            });
+        };
+
+        // Trigger number animation when process section is visible
+        const processObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    processObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const processSection = document.querySelector('.process-section');
+        if (processSection) {
+            processObserver.observe(processSection);
+        }
+
+        // Loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add hover effect sound (optional - can be removed)
+        const addHoverEffects = () => {
+            const cards = document.querySelectorAll('.service-card, .additional-card, .why-item');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                });
+            });
+        };
+
+        addHoverEffects();
+    </script>
+</body>
+</html>

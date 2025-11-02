@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MSI Interiors - Best Interior Designers in Delhi NCR | Founded by Raja Babu</title>
+    <meta name="description" content="Learn about MSI Interiors, Delhi NCR's leading interior design company since 2018. Founded by Raja Babu, we specialize in affordable luxury interiors.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #d4a574;
+            --dark-navy: #1a1f2e;
+            --light-bg: #f8f6f3;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            color: var(--primary-gold);
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-gold);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            margin-top: 80px;
+            height: 70vh;
+            background: linear-gradient(rgba(26, 31, 46, 0.7), rgba(26, 31, 46, 0.7)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23d4a574" width="1920" height="1080"/><text x="50%" y="50%" font-size="60" fill="%23fff" text-anchor="middle" opacity="0.3">About MSI Interiors</text></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--white), transparent);
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        /* Company Stats */
+        .stats-section {
+            background: var(--light-bg);
+            padding: 80px 50px;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Company Overview */
+        .company-overview {
+            padding: 120px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 18px;
+            margin-bottom: 80px;
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .overview-text p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .overview-image {
+            height: 500px;
+            background: linear-gradient(rgba(212, 165, 116, 0.1), rgba(212, 165, 116, 0.1)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect fill="%23d4c5b0" width="800" height="600"/><text x="50%" y="50%" font-size="24" fill="%23888" text-anchor="middle">MSI Interiors Office</text></svg>');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Expertise Section */
+        .expertise {
+            background: var(--light-bg);
+            padding: 100px 50px;
+        }
+
+        .expertise-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .expertise-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .expertise-icon {
+            font-size: 48px;
+            color: var(--primary-gold);
+            margin-bottom: 25px;
+        }
+
+        .expertise-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--dark-navy);
+            margin-bottom: 20px;
+        }
+
+        .expertise-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Founder Section */
+        .founder {
+            padding: 120px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .founder-image-box {
+            position: sticky;
+            top: 120px;
+        }
+
+        .founder-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(rgba(212, 165, 116, 0.2), rgba(212, 165, 116, 0.2)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect fill="%23c9a961" width="400" height="500"/><text x="50%" y="50%" font-size="24" fill="%23fff" text-anchor="middle">Raja Babu</text></svg>');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 25px;
+        }
+
+        .founder-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+        }
+
+        .founder-title {
+            font-size: 16px;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .founder-bio p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        .founder-highlight {
+            background: var(--light-bg);
+            padding: 30px;
+            border-left: 4px solid var(--primary-gold);
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .founder-highlight p {
+            font-style: italic;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            background: var(--light-bg);
+            padding: 100px 50px;
+        }
+
+        .certificates-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .certificate-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: var(--primary-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-image::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .certificate-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .certificate-info h3 {
+            font-size: 18px;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .certificate-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .certificate-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-gold);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, #2d3748 100%);
+            padding: 100px 50px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #e2e8f0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--primary-gold);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+            background: #c99654;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 50px;
+            background: #0f1419;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-hero h1 {
+                font-size: 48px;
+            }
+
+            .about-hero p {
+                font-size: 18px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .overview-content,
+            .founder-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .founder-image-box {
+                position: static;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 0 20px;
+            }
+
+            .about-hero {
+                height: 60vh;
+            }
+
+            .about-hero h1 {
+                font-size: 36px;
+            }
+
+            .about-hero p {
+                font-size: 16px;
+            }
+
+            .company-overview,
+            .expertise,
+            .founder,
+            .certificates,
+            .cta-section {
+                padding: 60px 20px;
+            }
+
+            .stats-section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .cta-section h2 {
+                font-size: 36px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                MSI INTERIORS
+                <span class="logo-subtitle">Best Interior Designers Since 2018</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>About MSI Interiors</h1>
+            <p>The Blueprint for Making Your Dreams Come True</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">7+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">50000+</div>
+                <div class="stat-label">Design Hours</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="company-overview">
+        <h2 class="section-title animate-on-scroll">Our Company</h2>
+        <p class="section-subtitle animate-on-scroll">Dream it, design it, live it. We infuse your essence into artistic masterpieces</p>
+        
+        <div class="overview-content">
+            <div class="overview-text animate-on-scroll">
+                <p>MSI Interiors is a leading concept interiors and decor company in the luxury segment, based in Delhi NCR. Since 2018, we have been transforming spaces into artistic masterpieces that reflect the unique personality and style of our clients.</p>
+                
+                <p>Our carefully crafted bouquet of interior solutions spans everything from architectural design, facade and elevation design, interior design, to custom furniture, accessories, artworks, and landscaping. Our comprehensive end-to-end, turn-key solutions are aimed at all interiors from apartments and penthouses to bungalows, villas and farmhouses.</p>
+                
+                <p>As one of the best Interior designing firm in Gurgaon & NCR, we take up projects pan-India and have built an impressive portfolio that speaks to our commitment to excellence, innovation, and client satisfaction.</p>
+            </div>
+            <div class="overview-image animate-on-scroll">
+                <img src="static/Screenshot 2025-10-31 070858.png" alt="Overview Image" style="width: 100%; border-radius: 15px;">
+            </div>
+        </div>
+
+        <div class="overview-content" style="margin-top: 60px;">
+            <div class="overview-image animate-on-scroll">
+                <img src="static/ofice app.png" alt="Overview Image" style="width: 100%; border-radius: 15px;">
+            </div>
+            <div class="overview-text animate-on-scroll">
+                <p>At MSI Interiors, we believe interiors are not just rooms, they are living poems waiting to be penned. Our passion is creating spaces that nourish your soul and inspire your spirit, wholeheartedly designed around your own lifestyle and demands.</p>
+                
+                <p>From carefully designed furniture layouts and colour palettes to rigorous attention to every detail, we guarantee a smooth and stress-free experience to create something that you have always envisioned!</p>
+                
+                <p>Whether you desire the clean lines of modern minimalism, the timeless allure of heirloom pieces, or the whimsical touch of personalized details, we curate designs for all your needs. From statement sofas that enfold conversation to hidden storage solutions that optimize space, we create pieces that not only complement your existing décor but uplift your entire living experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise">
+        <div class="expertise-container">
+            <h2 class="section-title animate-on-scroll">Area of Expertise</h2>
+            <p class="section-subtitle animate-on-scroll">Our expertise unfolds across distinct yet intertwined domains</p>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card animate-on-scroll">
+                    <div class="expertise-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Interior Design</h3>
+                    <p>We create spaces that nourish your soul and inspire your spirit. From carefully designed furniture layouts and colour palettes to rigorous attention to every detail, we craft interiors that reflect your unique personality and lifestyle. Our designs range from modern minimalism to timeless classic elegance.</p>
+                </div>
+                
+                <div class="expertise-card animate-on-scroll">
+                    <div class="expertise-icon"><i class="fas fa-couch"></i></div>
+                    <h3>Renovation work</h3>
+                    <p>We provide complete renovation services for all types of spaces. Whether it’s home, office, shop, or commercial property, our experienced team handles everything from design to finishing. We deliver quality workmanship, modern solutions, and hassle-free project management — all tailored to your budget and style.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder">
+        <h2 class="section-title animate-on-scroll">Meet Our Founder</h2>
+        <p class="section-subtitle animate-on-scroll">Visionary Leader Behind MSI Interiors</p>
+        
+        <div class="founder-content">
+            <div class="founder-image-box animate-on-scroll">
+                <div class="founder-image"></div>
+                <h3 class="founder-name">RAJA BABU</h3>
+                <p class="founder-title">Director & Principal Designer</p>
+            </div>
+            
+            <div class="founder-bio">
+                <div class="animate-on-scroll">
+                    <p>Raja Babu, the founder and principal designer of MSI Interiors, has been recognized as one of Delhi NCR's leading Interior Designers. He has been valued incessantly for his authentic designs made with uncompromised craftsmanship and attention to detail.</p>
+                    
+                    <p>Since the establishment of MSI Interiors in 2018, Raja Babu has focused on the pivotal strengths of innovation, an eye for intricate detailing, and understanding the client's orientation for their space. His dedication to delivering spaces that are artistically refined with global standards and completing work within confined timelines has made him a noteworthy name in the domain of interior design.</p>
+                </div>
+
+                <div class="founder-highlight animate-on-scroll">
+                    <p>"Accessories and enhancements are the elements that bring out the personality of a space and give the final touch of balance and style. Every project is an opportunity to create something extraordinary that resonates with the client's vision."</p>
+                </div>
+
+                <div class="animate-on-scroll">
+                    <p>With formal education in interior design and a deep appreciation for lifestyle aesthetics, Raja Babu strives to provide the best solutions tailored to each client's needs. In a field rife with change, his exposure to global design trends has made him a competent designer who can constantly deliver contemporary excellence.</p>
+                    
+                    <p>Raja Babu also has expertise in product design that is in complete harmony with signature design intents. From fabrics to home decor, enhancements to furniture, his designs are elegant, budget-friendly, and majestic. The experimental design approach is taking elements of design to a new realm of luxury living while maintaining affordability.</p>
+                    
+                    <p>What sets him apart is not just the talent for creating beautiful spaces, but also the unwavering dedication to understanding the unique needs and preferences of each client. His accomplishments can be attributed to his talent, determination, and pure ardor for design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates & Documents Section -->
+    <!-- <section class="certificates">
+        <div class="certificates-container">
+            <h2 class="section-title animate-on-scroll">Certifications & Credentials</h2>
+            <p class="section-subtitle animate-on-scroll">Our commitment to excellence, verified and certified</p>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-certificate"></i>
+                        <div class="certificate-badge">Certified</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ISO 9001:2015 Certified</h3>
+                        <p>Quality Management System Certification</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-badge">Awarded</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Best Interior Design Firm</h3>
+                        <p>Delhi NCR Design Excellence Award 2023</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="certificate-badge">Registered</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Business Registration</h3>
+                        <p>Government of India Licensed & Registered</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-file-contract"></i>
+                        <div class="certificate-badge">Verified</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>GST Certification</h3>
+                        <p>Valid GST Registration for Business Operations</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-handshake"></i>
+                        <div class="certificate-badge">Member</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Professional Membership</h3>
+                        <p>Member of Interior Design Association</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-star"></i>
+                        <div class="certificate-badge">Excellence</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Customer Choice Award</h3>
+                        <p>Top Rated Interior Designer - 2024</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="certificate-badge">Verified</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Trade License</h3>
+                        <p>Valid Municipal Corporation Trade License</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-user-graduate"></i>
+                        <div class="certificate-badge">Certified</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Professional Qualification</h3>
+                        <p>Interior Design Certification & Training</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card animate-on-scroll">
+                    <div class="certificate-image">
+                        <i class="fas fa-leaf"></i>
+                        <div class="certificate-badge">Green</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Eco-Friendly Certified</h3>
+                        <p>Sustainable Design Practices Certified</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="animate-on-scroll">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Let's craft your dream space together. Get in touch with us today!</p>
+            <a href="consultform.html" class="cta-button">Get Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>MSI Interiors</strong> - Best Interior Designers in Delhi NCR, Gurgaon | Founded by Raja Babu in 2018</p>
+        <p style="margin-top: 15px; font-size: 13px;">&copy; 2025 MSI Interiors. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919718530108?text=Hello%20MSI%20Interiors,%20I%20need%20interior%20design%20consultation" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.about-hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+
+        // Certificate cards click effect
+        document.querySelectorAll('.certificate-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
