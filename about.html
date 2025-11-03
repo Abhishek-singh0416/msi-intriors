@@ -404,23 +404,16 @@
         }
 
         /* Certificates Section */
-        .certificates {
-            background: var(--light-bg);
-            padding: 100px 50px;
-        }
+        
 
-        .certificates-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        
 
         .certificates-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-top: 60px;
+            margin-top: 30px;
         }
-
         .certificate-card {
             background: var(--white);
             border-radius: 15px;
@@ -428,70 +421,104 @@
             box-shadow: var(--shadow-sm);
             transition: all 0.4s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 410px;
+            position: relative;
         }
-
         .certificate-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: var(--shadow-lg);
         }
-
         .certificate-image {
             width: 100%;
-            height: 350px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            max-width: 320px;
+            height: 210px;
+            background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 64px;
-            color: var(--primary-gold);
             position: relative;
+            border-radius: 10px 10px 0 0;
             overflow: hidden;
+            margin-top: 24px;
         }
-
-        .certificate-image::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 3s infinite;
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s;
         }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .certificate-info {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .certificate-info h3 {
-            font-size: 18px;
-            color: var(--dark-navy);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .certificate-info p {
-            font-size: 13px;
-            color: var(--text-light);
-        }
-
         .certificate-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             background: var(--primary-gold);
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 20px;
+            color: #fff;
+            padding: 6px 14px;
             font-size: 12px;
+            border-radius: 30px;
             font-weight: 600;
             text-transform: uppercase;
+            z-index: 3;
             letter-spacing: 1px;
         }
+        .certificate-info {
+            padding: 30px 20px 25px 20px;
+            text-align: center;
+        }
+        .certificate-info h3 { font-size: 18px; color: var(--dark-navy); margin-bottom: 13px; font-weight: 700; }
+        .certificate-info p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1999; 
+            left: 0; top: 0;
+            width: 100vw; height: 100vh;
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center; align-items: center;
+            transition: opacity 0.3s;
+        }
+        .modal.active { display: flex; }
+        .modal-img {
+            max-width: 85vw; max-height: 85vh;
+            border-radius: 22px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.6);
+            background: var(--white);
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+        }
+        .close-modal {
+            position: absolute;
+            top: 40px; right: 70px;
+            color: #fff;
+            background: #0009;
+            border-radius: 50%;
+            padding: 10px 16px;
+            font-size: 30px;
+            border: none;
+            z-index: 2200;
+            cursor: pointer;
+            transition: background 0.12s;
+        }
+        .close-modal:hover { background: var(--primary-gold);}
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+        .certificates-grid { grid-template-columns: repeat(2,1fr); }
+        .modal-img { max-width: 95vw; max-height: 65vh; }
+        }
+        @media (max-width: 700px) {
+        .certificates-grid { grid-template-columns: 1fr; }
+        .certificate-card { min-height:360px;}
+        .about-hero h1 { font-size: 38px;}
+        }
+        
 
         /* CTA Section */
         .cta-section {
@@ -805,113 +832,53 @@
     </section>
 
     <!-- Certificates & Documents Section -->
-    <!-- <section class="certificates">
+    <section class="certificates" style="margin-top: 30px;">
         <div class="certificates-container">
-            <h2 class="section-title animate-on-scroll">Certifications & Credentials</h2>
-            <p class="section-subtitle animate-on-scroll">Our commitment to excellence, verified and certified</p>
-            
-            <div class="certificates-grid">
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-certificate"></i>
-                        <div class="certificate-badge">Certified</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>ISO 9001:2015 Certified</h3>
-                        <p>Quality Management System Certification</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-award"></i>
-                        <div class="certificate-badge">Awarded</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Best Interior Design Firm</h3>
-                        <p>Delhi NCR Design Excellence Award 2023</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-shield-alt"></i>
-                        <div class="certificate-badge">Registered</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Business Registration</h3>
-                        <p>Government of India Licensed & Registered</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-file-contract"></i>
-                        <div class="certificate-badge">Verified</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>GST Certification</h3>
-                        <p>Valid GST Registration for Business Operations</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-handshake"></i>
-                        <div class="certificate-badge">Member</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Professional Membership</h3>
-                        <p>Member of Interior Design Association</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-star"></i>
-                        <div class="certificate-badge">Excellence</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Customer Choice Award</h3>
-                        <p>Top Rated Interior Designer - 2024</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-check-circle"></i>
-                        <div class="certificate-badge">Verified</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Trade License</h3>
-                        <p>Valid Municipal Corporation Trade License</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-user-graduate"></i>
-                        <div class="certificate-badge">Certified</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Professional Qualification</h3>
-                        <p>Interior Design Certification & Training</p>
-                    </div>
-                </div>
-
-                <div class="certificate-card animate-on-scroll">
-                    <div class="certificate-image">
-                        <i class="fas fa-leaf"></i>
-                        <div class="certificate-badge">Green</div>
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Eco-Friendly Certified</h3>
-                        <p>Sustainable Design Practices Certified</p>
-                    </div>
-                </div>
+        <h2 class="section-title">Certifications & Credentials</h2>
+        <p class="section-subtitle">Our commitment to excellence, verified and certified</p>
+        <div class="certificates-grid">
+            <!-- GST Certificate -->
+            <div class="certificate-card">
+            <div class="certificate-image">
+                <img src="static/gst reg.png" alt="GST Certification" loading="lazy" data-large="static/gst_reg.png">
+                <div class="certificate-badge">Verified</div>
+            </div>
+            <div class="certificate-info">
+                <h3>GST Registration</h3>
+                <p>Valid Goods and Services Tax (GST) registration for all legal business transactions, ensuring every client engagement is law-compliant and transparent.</p>
+            </div>
+            </div>
+            <!-- MSME Membership -->
+            <div class="certificate-card">
+            <div class="certificate-image">
+                <img src="static/msme.png" alt="MSME Membership" loading="lazy" data-large="static/msme.png">
+                <div class="certificate-badge">Member</div>
+            </div>
+            <div class="certificate-info">
+                <h3>MSME Registration</h3>
+                <p>Recognized as a Micro, Small & Medium Enterprise (MSME) under Government of India initiatives, reflecting commitment to quality standards and business growth.</p>
+            </div>
+            </div>
+            <!-- Letter Head / Award -->
+            <div class="certificate-card">
+            <div class="certificate-image">
+                <img src="static/letter head.png" alt="Official Letter Head" loading="lazy" data-large="static/letter_head.png">
+                <div class="certificate-badge">Excellence</div>
+            </div>
+            <div class="certificate-info">
+                <h3>Official Letter Head</h3>
+                <p>Company's official letterhead and recognition as Client Choice Award winner, demonstrating excellence and reliability in interior design services.</p>
+            </div>
             </div>
         </div>
-    </section> -->
+        </div>
+        <!-- Fullscreen Modal for Certificates -->
+        <div id="modal" class="modal">
+        <button class="close-modal" onclick="closeModal()" aria-label="Close certificate">&times;</button>
+        <img id="modal-img" class="modal-img" src="" alt="Certificate Fullscreen">
+        </div>
+    </section>
+
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -997,6 +964,29 @@
                 document.body.style.transition = 'opacity 0.5s ease';
                 document.body.style.opacity = '1';
             }, 100);
+        });
+
+         // Modal logic for certificate click
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        document.querySelectorAll('.certificate-image img').forEach(img => {
+        img.addEventListener('click', function() {
+            modal.classList.add('active');
+            modalImg.src = this.getAttribute('data-large');
+            modalImg.alt = this.alt + ' - Fullscreen';
+        });
+        });
+        function closeModal() {
+        modal.classList.remove('active');
+        modalImg.src = '';
+        }
+        // Close modal on click outside image
+        modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+        });
+        // Accessibility: Close on 'Esc'
+        document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
         });
     </script>
 </body>
