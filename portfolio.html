@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Our Portfolio - MSI Interiors | Interior Design Projects in Delhi NCR</title>
-    <meta name="description" content="Explore MSI Interiors portfolio of stunning interior design projects in Delhi NCR. View our completed residential, commercial, and office interior projects.">
+
+    <!-- SEO TITLE & META -->
+    <title>MSI Interiors Gurgaon | Best Interior Design, Material Supplier & Maintenance Services</title>
+    <meta name="description" content="MSI Interiors in Gurgaon offers premium interior design, turnkey fit-outs, material supply and facility maintenance services for offices, showrooms and residences. Trusted by brands like Havas, Oppo, Onestolabs and Crystallite Infotech in Delhi NCR." />
+    <meta name="keywords" content="MSI Interiors Gurgaon, interior designers in Gurgaon, interior contractors in Gurgaon, interior facility provider in Gurgaon, material supplier in Gurgaon, office interior Gurgaon, commercial interior design Delhi NCR, MSI interior facility Gurugram" />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="MSI Interiors" />
+    <link rel="canonical" href="https://www.example.com/portfolio.html" />
+
+    <!-- Open Graph for social SEO -->
+    <meta property="og:title" content="MSI Interiors Gurgaon | Best Interior & Facility Provider" />
+    <meta property="og:description" content="MSI Interiors is a leading interior design, material supply and maintenance work provider in Gurgaon, India. View our projects and trusted corporate clients." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/portfolio.html" />
+    <meta property="og:image" content="https://www.example.com/assets/images/msi-interiors-gurgaon.jpg" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +41,7 @@
         }
         html{scroll-behavior:smooth;}
         body{font-family:'Poppins',sans-serif;color:var(--text-dark);line-height:1.7;overflow-x:hidden;}
+
         /* Animations */
         @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
         @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -46,11 +60,17 @@
         .nav-links a:hover,.nav-links a.active{color:var(--primary-gold);}
 
         /* Hero */
-        .portfolio-hero{margin-top:80px;height:62vh;background:linear-gradient(rgba(26,31,46,.7),rgba(26,31,46,.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23d4a574" width="1920" height="1080"/><text x="50%" y="50%" font-size="60" fill="%23fff" text-anchor="middle" opacity="0.3">Our Portfolio</text></svg>');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);position:relative;}
+        .portfolio-hero{margin-top:80px;height:62vh;background:linear-gradient(rgba(26,31,46,.7),rgba(26,31,46,.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23d4a574" width="1920" height="1080"/><text x="50%" y="50%" font-size="60" fill="%23fff" text-anchor="middle" opacity="0.3">MSI Interiors Gurgaon</text></svg>');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);position:relative;}
         .portfolio-hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:100px;background:linear-gradient(to top,var(--white),transparent);}
         .hero-content{z-index:2;max-width:900px;padding:0 20px;}
-        .hero-content h1{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;margin-bottom:14px;letter-spacing:3px;animation:fadeInUp 1s ease;}
+        .hero-content h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;margin-bottom:14px;letter-spacing:2px;animation:fadeInUp 1s ease;}
         .hero-content p{font-size:18px;font-weight:300;letter-spacing:1px;animation:fadeInUp 1s ease .3s both;}
+
+        /* Intro SEO text */
+        .intro-section{padding:40px 20px 20px;background:var(--white);}
+        .intro-container{max-width:1100px;margin:0 auto;text-align:center;}
+        .intro-container h2{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:10px;color:var(--dark-navy);}
+        .intro-container p{font-size:15px;color:var(--text-light);}
 
         /* Stats */
         .portfolio-stats{padding:60px 50px;background:var(--light-bg);}
@@ -68,7 +88,7 @@
         .filter-btn:hover,.filter-btn.active{background:var(--primary-gold);color:var(--white);border-color:var(--primary-gold);transform:translateY(-2px);}
 
         /* Portfolio grid */
-        .portfolio-section{padding:60px 20px 120px;background:var(--white);}
+        .portfolio-section{padding:60px 20px 60px;background:var(--white);}
         .portfolio-container{max-width:1400px;margin:0 auto;}
         .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
         .portfolio-item{position:relative;height:360px;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm);transition:all .45s;}
@@ -82,23 +102,31 @@
         .portfolio-location{font-size:13px;color:rgba(255,255,255,0.9);display:flex;align-items:center;gap:8px;}
         .portfolio-info{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.12);opacity:0;transform:translateY(10px);transition:all .4s;}
         .portfolio-item:hover .portfolio-info{opacity:1;transform:translateY(0);}
-
         .info-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.95);}
         .info-item i{color:var(--primary-gold);}
-
         .view-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);background:var(--white);color:var(--dark-navy);padding:12px 26px;border-radius:30px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;font-size:12px;opacity:0;transition:all .35s;z-index:10;}
         .portfolio-item:hover .view-btn{opacity:1;transform:translate(-50%,-50%) scale(1);}
+
+        /* Clients section */
+        .clients-section{padding:50px 20px 70px;background:var(--light-bg);}
+        .clients-container{max-width:1100px;margin:0 auto;}
+        .clients-header{text-align:center;margin-bottom:30px;}
+        .clients-header h2{font-family:'Playfair Display',serif;font-size:30px;color:var(--dark-navy);margin-bottom:6px;}
+        .clients-header p{font-size:14px;color:var(--text-light);}
+        .clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+        .client-card{background:var(--white);border-radius:12px;padding:18px 18px 16px;box-shadow:var(--shadow-sm);}
+        .client-title{font-size:15px;font-weight:600;color:var(--dark-navy);margin-bottom:6px;text-transform:uppercase;}
+        .client-sub{font-size:13px;color:var(--primary-gold);margin-bottom:6px;}
+        .client-address{font-size:13px;color:var(--text-light);line-height:1.6;}
 
         /* Modal (overlay) */
         .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:2000;padding:28px;align-items:center;justify-content:center;overflow:auto;}
         .modal.active{display:flex;}
         .modal-content{background:var(--white);max-width:1100px;width:100%;border-radius:16px;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 420px;box-shadow:var(--shadow-lg);animation:zoomIn .4s ease;}
-        /* make modal-content responsive */
         @media (max-width:968px){ .modal-content{grid-template-columns:1fr;} }
 
         .modal-close{position:absolute;top:14px;right:14px;width:46px;height:46px;background:var(--dark-navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;z-index:10;box-shadow:var(--shadow-md);transition:transform .25s;}
         .modal-close:hover{transform:rotate(90deg);}
-
         .modal-image{background-size:cover;background-position:center;width:100%;min-height:460px;display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--white);}
         .modal-details{padding:28px 30px;}
         .modal-category{display:inline-block;padding:8px 20px;background:var(--light-bg);color:var(--primary-gold);border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;margin-bottom:18px;}
@@ -114,15 +142,14 @@
         .features-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:6px;}
         .feature-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-light);}
         .feature-item i{color:var(--primary-gold);font-size:16px;}
-
-        /* small gallery row in modal */
         .modal-thumbs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;}
         .thumb{width:72px;height:56px;border-radius:8px;background-size:cover;background-position:center;cursor:pointer;border:2px solid transparent;transition:all .18s;}
         .thumb:focus,.thumb.active-thumb{outline:none;border-color:var(--primary-gold);transform:scale(1.03);}
 
         /* CTA & footer & whatsapp */
         .cta-section{background:linear-gradient(135deg,var(--dark-navy) 0%, #2d3748 100%);padding:80px 20px;text-align:center;color:var(--white);}
-        .cta-section h2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;margin-bottom:12px;}
+        .cta-section h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;margin-bottom:12px;}
+        .cta-section p{font-size:15px;margin-bottom:18px;}
         .cta-button{display:inline-block;padding:14px 40px;background:var(--primary-gold);color:var(--white);text-decoration:none;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:600;border-radius:40px;transition:all .3s;}
         .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,165,116,.35);}
 
@@ -132,11 +159,82 @@
         .whatsapp-float:hover{transform:scale(1.08);}
 
         /* responsive adjustments */
-        @media (max-width:1200px){ .portfolio-grid{grid-template-columns:repeat(2,1fr);} .stats-container{grid-template-columns:repeat(2,1fr);} }
-        @media (max-width:968px){ .nav-links{display:none;} .portfolio-grid{grid-template-columns:1fr;} .modal-image{min-height:300px;} .modal-specs,.features-list{grid-template-columns:1fr;} .modal-content{grid-template-columns:1fr;} }
-        @media (max-width:640px){ nav{padding:0 16px;} .portfolio-hero{height:50vh;} .hero-content h1{font-size:36px;} .whatsapp-float{width:54px;height:54px;font-size:24px;bottom:16px;right:16px;} }
+        @media (max-width:1200px){
+            .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+            .stats-container{grid-template-columns:repeat(2,1fr);}
+        }
+        @media (max-width:968px){
+            .nav-links{display:none;}
+            .portfolio-grid{grid-template-columns:1fr;}
+            .modal-image{min-height:300px;}
+            .modal-specs,.features-list{grid-template-columns:1fr;}
+            .modal-content{grid-template-columns:1fr;}
+        }
+        @media (max-width:640px){
+            nav{padding:0 16px;}
+            .portfolio-hero{height:50vh;}
+            .hero-content h1{font-size:34px;}
+            .whatsapp-float{width:54px;height:54px;font-size:24px;bottom:16px;right:16px;}
+        }
         /* when modal open prevent background scroll */
         body.modal-open{overflow:hidden;}
+
+        /* MOBILE NAVIGATION (added) */
+        .nav-toggle{
+            display:none;
+            background:none;
+            border:none;
+            font-size:22px;
+            cursor:pointer;
+            color:var(--dark-navy);
+        }
+        .nav-toggle:focus{outline:2px solid var(--primary-gold);}
+
+        .mobile-nav{
+            position:fixed;
+            top:0;
+            right:-260px;
+            width:240px;
+            height:100vh;
+            background:var(--white);
+            box-shadow:var(--shadow-lg);
+            z-index:1200;
+            padding:80px 20px 20px;
+            transition:right .3s ease;
+        }
+        .mobile-nav.open{right:0;}
+        .mobile-nav ul{
+            list-style:none;
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+        .mobile-nav a{
+            text-decoration:none;
+            color:var(--text-dark);
+            text-transform:uppercase;
+            font-size:13px;
+            letter-spacing:1px;
+            font-weight:500;
+        }
+
+        .mobile-nav-overlay{
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.45);
+            z-index:1100;
+            opacity:0;
+            pointer-events:none;
+            transition:opacity .3s ease;
+        }
+        .mobile-nav-overlay.active{
+            opacity:1;
+            pointer-events:auto;
+        }
+
+        @media (max-width:968px){
+            .nav-toggle{display:block;}
+        }
     </style>
 </head>
 <body>
@@ -145,8 +243,9 @@
         <nav>
             <a href="index.html" class="logo">
                 MSI INTERIORS
-                <span class="logo-subtitle">Best Interior Designers Since 2018</span>
+                <span class="logo-subtitle">Best Interior & Facility Provider in Gurgaon</span>
             </a>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -154,14 +253,41 @@
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+
+            <!-- Mobile nav toggle (added) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
+    <!-- Mobile slide navigation (added) -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
     <!-- Hero -->
-    <section class="portfolio-hero">
+    <section class="portfolio-hero" aria-label="MSI Interiors Portfolio in Gurgaon">
         <div class="hero-content">
-            <h1>Our Portfolio</h1>
-            <p>Transforming Spaces, Creating Masterpieces</p>
+            <h1>Our Portfolio </h1>
+            <p>MSI Interiors – Interior Design, Material Supply & Maintenance Work for Corporate and Residential Spaces.</p>
+        </div>
+    </section>
+
+    <!-- SEO Intro -->
+    <section class="intro-section">
+        <div class="intro-container">
+            <h2>MSI Interiors – Best Interior Facility Provider in Gurgaon, India</h2>
+            <p>
+                MSI Interiors is a Gurgaon based interior contractor offering turnkey interior design, high quality material supply and complete facility maintenance services for offices, showrooms and homes across Delhi NCR. Our expert interior team delivers functional and aesthetic spaces with reliable after‑sale maintenance support for leading Indian and international brands.
+            </p>
         </div>
     </section>
 
@@ -180,7 +306,7 @@
             </div>
             <div class="stat-box animate-on-scroll">
                 <div class="stat-icon"><i class="fas fa-city"></i></div>
-                <div class="stat-number">25+</div>
+                <div class="stat-number">25+</</div>
                 <div class="stat-label">Cities Covered</div>
             </div>
             <div class="stat-box animate-on-scroll">
@@ -205,7 +331,7 @@
     </section>
 
     <!-- Portfolio grid -->
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="portfolio">
         <div class="portfolio-container">
             <div class="portfolio-grid" id="portfolioGrid">
                 <!-- JS will populate items from projects array -->
@@ -213,19 +339,73 @@
         </div>
     </section>
 
+    <!-- Corporate Clients -->
+    <section class="clients-section" id="clients">
+        <div class="clients-container">
+            <div class="clients-header">
+                <h2>Our Corporate Clients in Gurgaon & India</h2>
+                <p>Leading brands that trust MSI Interiors for office interiors, material supply and maintenance services.</p>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card">
+                    <div class="client-title">HAVAS WORLD</div>
+                    <div class="client-sub">HAVAS WORLD INDIA PRIVATE LIMITED</div>
+                    <div class="client-address">
+                        6th Floor, Tower-C, DLF Building No. 8, DLF Cyber City, Phase II, Gurugram, Haryana 122002
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-title">HAVAS MEDIA</div>
+                    <div class="client-sub">HAVAS MEDIA INDIA PRIVATE LIMITED</div>
+                    <div class="client-address">
+                        6th Floor, Tower-C, DLF Building No. 8, DLF Cyber City, Phase II, Gurugram, Haryana 122002
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-title">ONESTOLABS</div>
+                    <div class="client-sub">ONESTOLABS PRIVATE LIMITED</div>
+                    <div class="client-address">
+                        Plot No. 309, Sector 6, IMT Manesar, Haryana, India
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-title">OPPO</div>
+                    <div class="client-sub">OPPO India</div>
+                    <div class="client-address">
+                        Corporate and retail interior works executed by MSI Interiors in Gurgaon and Delhi NCR.
+                    </div>
+                </div>
+                <div class="client-card">
+                    <div class="client-title">CRYSTALLITE INFOTECH</div>
+                    <div class="client-sub">CRYSTALLITE INFOTECH PRIVATE LIMITED</div>
+                    <div class="client-address">
+                        Technology and IT office interior solutions delivered by MSI Interiors across Gurgaon region.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-section">
-        <h2>Ready to Transform Your Space?</h2>
-        <p>Let’s design your dream home or workspace with elegance, detail, and precision.</p>
+        <h2>Ready to Transform Your Space in Gurgaon?</h2>
+        <p>Book a free consultation with MSI Interiors for interior design, material supply and maintenance services for your office, showroom or home.</p>
         <a href="consultform.html" class="cta-button">Book a Free Consultation</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 MSI Interiors. All Rights Reserved. | Designed with ❤ by Abhishek Singh</p>
+        <p>
+            &copy; 2025 MSI Interiors. All Rights Reserved. | 
+            MSI Interiors Gurgaon – Interior Design, Material Supply &amp; Maintenance Work Provider. |
+            Website designed and maintained by 
+            <a href="https://crystallite.in" target="_blank" rel="noopener noreferrer">
+                Crystallite Infotech
+            </a>.
+        </p>
     </footer>
 
-    <!-- WhatsApp Floating (placeholder number: replace 'xxxxxxxxxxx') -->
+    <!-- WhatsApp Floating -->
     <a href="https://wa.me/919718530108" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -246,7 +426,7 @@
                 </p>
 
                 <div class="modal-specs" id="modalSpecs">
-                    <!-- 3 spec items inserted here -->
+                    <!-- spec items injected here -->
                 </div>
 
                 <div class="modal-features">
@@ -268,116 +448,112 @@
     <script>
         /***********************
          * Project data array
-         * each project has:
-         *  - title, category, location, area, year, type, description, features[], images[]
-         *  You can add more projects to this array — the grid and modal populate automatically.
          ***********************/
         const projects = [
             {
                 id: 0,
-                title: 'Modern Living Room',
+                title: 'Modern Corporate Office – Cyber City',
+                category: 'Office',
+                categories: ['office','commercial'],
+                location: 'DLF Cyber City, Gurgaon',
+                area: '5000 sq ft',
+                year: 2024,
+                type: 'Corporate Office Interior',
+                description: 'Open plan workspace with ergonomic furniture, acoustic solutions and brand‑centric MSI Interiors design for a multinational client in Gurugram.',
+                features: ['Ergonomic workstations','Acoustic panels','Brand wall design','Sustainable materials'],
+                images: [
+                    'https://images.unsplash.com/photo-1556761175-129418cb2dfe?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop'
+                ]
+            },
+            {
+                id: 1,
+                title: 'Modern Living Room – Gurgaon',
                 category: 'Residential',
                 categories: ['residential','living'],
                 location: 'DLF Phase 3, Gurgaon',
                 area: '2000 sq ft',
                 year: 2024,
                 type: 'Living Room',
-                description: 'A contemporary living room combining neutral tones, layered lighting and custom cabinetry for a warm, inviting atmosphere.',
+                description: 'Contemporary living room with neutral tones, layered lighting and custom cabinetry designed by MSI Interiors for a premium residence.',
                 features: ['Custom furniture design','Smart lighting integration','Premium material selection','Space optimization'],
                 images: [
-                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db',
-                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f89a4a5b0b1d46e3d0d9f536b5a3b54',
-                    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f5c8d4c8f309e8e5676f4ea9b9b2f67'
-                ]
-            },
-            {
-                id: 1,
-                title: 'Corporate Office',
-                category: 'Office',
-                categories: ['office','commercial'],
-                location: 'Cyber City, Gurgaon',
-                area: '5000 sq ft',
-                year: 2024,
-                type: 'Office',
-                description: 'A modern corporate office with open-plan layouts, acoustic solutions, and collaborative breakout areas.',
-                features: ['Ergonomic workstations','Acoustic panels','Integrated AV','Sustainable materials'],
-                images: [
-                    'https://images.unsplash.com/photo-1556761175-129418cb2dfe?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=bb99a2f7b8f6c7c8f7b9b6b3f6e2a1c1',
-                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db',
-                    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=37f9ef0b5d2b6a3c4c69d3a0e2833f56'
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop'
                 ]
             },
             {
                 id: 2,
-                title: 'Contemporary Kitchen',
+                title: 'Contemporary Modular Kitchen – Delhi',
                 category: 'Modular Kitchen',
                 categories: ['residential','kitchen'],
                 location: 'Vasant Kunj, Delhi',
                 area: '300 sq ft',
                 year: 2024,
                 type: 'Kitchen',
-                description: 'A sleek modular kitchen combining warm wood tones with matte surfaces and smart storage to maximize flow.',
+                description: 'Sleek modular kitchen with warm wood tones, smart storage and easy‑to‑maintain MSI Interiors material selection.',
                 features: ['Soft-close cabinets','Integrated appliances','Quartz countertops','Pull-out storage'],
                 images: [
-                    'https://images.unsplash.com/photo-1556911220-e15b29be8c0d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=f3d5b2b43d8a9f5a8a1f8c8b4d7f3e2a',
-                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db',
-                    'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=aa1f1df1d2b3c4a5d6f7b8c9a0b1c2d3'
+                    'https://images.unsplash.com/photo-1556911220-e15b29be8c0d?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop'
                 ]
             },
             {
                 id: 3,
-                title: 'Luxury Master Bedroom',
+                title: 'Luxury Master Bedroom – Gurgaon',
                 category: 'Bedroom',
                 categories: ['residential','bedroom'],
                 location: 'Sohna Road, Gurgaon',
                 area: '400 sq ft',
                 year: 2023,
                 type: 'Bedroom',
-                description: 'A luxurious master bedroom with layered textures, accent lighting and bespoke closet solutions.',
+                description: 'Luxury master bedroom with layered textures, ambient lighting and custom wardrobe designed and executed by MSI Interiors.',
                 features: ['Walk-in closet','Accent lighting','Soundproofing','Luxury finishes'],
                 images: [
-                    'https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=ad8f0e65c4f2a3b6d5a3f7f1a7b9c8d0',
-                    'https://images.unsplash.com/photo-1549187774-b4d1a6a5e9a1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=e9f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8',
-                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f89a4a5b0b1d46e3d0d9f536b5a3b54'
+                    'https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1549187774-b4d1a6a5e9a1?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop'
                 ]
             },
             {
                 id: 4,
-                title: 'Luxury Showroom Design',
+                title: 'Luxury Showroom Interior – MG Road',
                 category: 'Commercial',
                 categories: ['commercial','office'],
                 location: 'MG Road, Delhi',
                 area: '2500 sq ft',
                 year: 2023,
                 type: 'Showroom',
-                description: 'A premium showroom layout optimized for product display, customer flow and brand storytelling.',
+                description: 'Premium showroom layout with feature lighting, flexible displays and MSI Interiors material sourcing to support brand storytelling.',
                 features: ['Feature lighting','Flexible display modules','Customer circulation plan','Premium finishes'],
                 images: [
-                    'https://images.unsplash.com/photo-1543076447-215ad9ba6926?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a8b9c7d6e5f4a3b2c1d0e9f8a7b6c5d',
-                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=5f6e7d8c9b0a1d2c3e4f56789abcd012',
-                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db'
+                    'https://images.unsplash.com/photo-1543076447-215ad9ba6926?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop'
                 ]
             },
             {
                 id: 5,
-                title: 'Elegant Drawing Room',
+                title: 'Elegant Drawing Room – South Delhi',
                 category: 'Residential',
                 categories: ['residential','living'],
                 location: 'Greater Kailash, Delhi',
                 area: '1800 sq ft',
                 year: 2024,
                 type: 'Drawing Room',
-                description: 'An elegant drawing room focusing on symmetry, refined upholstery and classical details updated for today.',
+                description: 'Elegant drawing room focusing on symmetry, refined upholstery and classical details, executed by MSI Interiors as a turnkey project.',
                 features: ['Custom upholstery','Heritage detailing','Ambient lighting','Climate control'],
                 images: [
-                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f89a4a5b0b1d46e3d0d9f536b5a3b54',
-                    'https://images.unsplash.com/photo-1618221197229-4b2f3a2320d6?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d',
-                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b9b3ca09d2bf1c3b3e7f6b7a8d2c5db'
+                    'https://images.unsplash.com/photo-1618221197229-4b2f3a2320d6?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1505691723518-36a49b0f45b1?q=80&w=1600&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop'
                 ]
             }
         ];
 
-        /* Utility: build the portfolio grid from the projects[] array */
         const portfolioGrid = document.getElementById('portfolioGrid');
 
         function createProjectCard(project){
@@ -397,20 +573,16 @@
                 </div>
                 <button class="view-btn" aria-label="View project ${project.title}">View Project</button>
             `;
-            // open modal on click
             div.querySelector('.view-btn').addEventListener('click', () => openModal(project.id));
-            // Also allow clicking the card to open
             div.addEventListener('click', (e) => {
-                // avoid opening when clicking links/buttons inside overlay (none for now) 
                 if (!e.target.closest('.view-btn')) openModal(project.id);
             });
             return div;
         }
 
-        // populate grid
         projects.forEach(p => portfolioGrid.appendChild(createProjectCard(p)));
 
-        /* Filter functionality (works with dynamically added items) */
+        /* Filter functionality */
         const filterButtons = document.querySelectorAll('.filter-btn');
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -427,7 +599,7 @@
             });
         });
 
-        /* Scroll animation for elements with animate-on-scroll */
+        /* Scroll animation */
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
         function handleScrollAnimation(){
             const triggerBottom = window.innerHeight * 0.85;
@@ -441,7 +613,7 @@
         window.addEventListener('load', handleScrollAnimation);
 
         /**********************
-         * Modal behaviour & population
+         * Modal behaviour
          **********************/
         const modal = document.getElementById('projectModal');
         const modalContent = modal.querySelector('.modal-content');
@@ -462,17 +634,14 @@
             if(!project) return;
             currentProjectIndex = index;
 
-            // populate main image
             modalImage.style.backgroundImage = `url('${project.images[0]}')`;
-            modalImage.textContent = ''; // remove MSI placeholder text
+            modalImage.textContent = '';
 
-            // set text fields
             modalTitle.textContent = project.title;
             modalCategory.textContent = project.category;
             modalLocation.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${project.location}`;
             modalDescription.textContent = project.description;
 
-            // specs
             modalSpecs.innerHTML = '';
             const specItems = [
                 {icon: 'fa-ruler-combined', label: 'Area', value: project.area},
@@ -486,7 +655,6 @@
                 modalSpecs.appendChild(d);
             });
 
-            // features
             modalFeatures.innerHTML = '';
             project.features.forEach(f => {
                 const fi = document.createElement('div');
@@ -495,7 +663,6 @@
                 modalFeatures.appendChild(fi);
             });
 
-            // thumbnails (and click to change main image)
             modalThumbs.innerHTML = '';
             project.images.forEach((img, idx) => {
                 const t = document.createElement('button');
@@ -511,12 +678,9 @@
                 modalThumbs.appendChild(t);
             });
 
-            // show modal
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.classList.add('modal-open');
-
-            // trap focus to modal (basic)
             modalContent.querySelector('.modal-close').focus();
         }
 
@@ -525,46 +689,58 @@
             modal.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('modal-open');
             currentProjectIndex = null;
-            // return focus to the first visible portfolio item
             const visibleCard = document.querySelector('.portfolio-item');
-            if (visibleCard) visibleCard.focus?.();
+            if (visibleCard && visibleCard.focus) visibleCard.focus();
         }
 
-        // close via close button
         modalCloseBtn.addEventListener('click', closeModal);
 
-        // close on overlay click (click outside modal-content)
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
 
-        // close on Escape key
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 closeModal();
             }
         });
 
-        /* Accessibility: prevent click on modal-content from closing via propagation */
         modalContent.addEventListener('click', (e) => {
             e.stopPropagation();
         });
 
-        /* Optional: close modal on window resize to avoid layout issues on small devices */
-        window.addEventListener('resize', () => {
-            if (modal.classList.contains('active') && window.innerWidth < 400) {
-                // keep it open normally — we do nothing. (This handler is present if you want custom behavior.)
-            }
+        /* MOBILE NAV JS (added) */
+        const navToggle = document.getElementById('navToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+
+        function openMobileNav(){
+            mobileNav.classList.add('open');
+            mobileNavOverlay.classList.add('active');
+            mobileNav.setAttribute('aria-hidden','false');
+            navToggle.setAttribute('aria-label','Close navigation');
+            navToggle.innerHTML = '<i class="fas fa-times"></i>';
+        }
+
+        function closeMobileNav(){
+            mobileNav.classList.remove('open');
+            mobileNavOverlay.classList.remove('active');
+            mobileNav.setAttribute('aria-hidden','true');
+            navToggle.setAttribute('aria-label','Open navigation');
+            navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = mobileNav.classList.contains('open');
+            if(isOpen) closeMobileNav();
+            else openMobileNav();
         });
 
-        /* Small enhancement: clicking keyboard Enter on .view-btn will trigger open (button element already does) */
+        mobileNavOverlay.addEventListener('click', closeMobileNav);
 
-        /***********************
-         * Notes:
-         * - To add more projects: add an object to the projects[] array above.
-         * - To change WhatsApp number: change the href on the .whatsapp-float anchor.
-         * - All images used are Unsplash images (publicly shareable for non-deceptive uses).
-         ***********************/
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', closeMobileNav);
+        });
     </script>
 </body>
 </html>
